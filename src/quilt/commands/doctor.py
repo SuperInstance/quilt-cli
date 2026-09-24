@@ -60,16 +60,26 @@ def doctor_cmd(args) -> int:
                 continue
             print(f"  {r.name}:")
             for tf in test_files:
+                # Set up env to make src/ importable.
+                env = os.environ.copy()
+                env["PYTHONPATH"] = str(r / "src") + os.pathsep + env.get("PYTHONPATH", "")
+                # The test module is tests.<stem>
+                module_name = f"tests.{tf.stem}"
                 cp = subprocess.run(
                     [sys.executable, "-m", "unittest",
-                     tf.stem, "-v"],
+                     module_name, "-v"],
                     cwd=r, capture_output=True, text=True, timeout=60,
+                    env=env,
                 )
-                lines = cp.stdout.splitlines()
+                lines = (cp.stdout + cp.stderr).splitlines()
                 # Find the summary line.
-                summary = next((l for l in reversed(lines) if "OK" in l or "FAILED" in l), "")
+                summary = next((l for l in reversed(lines)
+                                if ("OK" in l and "Ran" not in l) or
+                                   "FAILED" in l or
+                                   ("Ran" in l and "test" in l)),
+                               "")
                 status = "✓" if cp.returncode == 0 else "✗"
-                print(f"    {status} {tf.name:30s} {summary[:50]}")
+                print(f"    {status} {tf.name:30s} {summary.strip()[:60]}")
 
     if not args.skip_jev:
         print("\n• JEV API")
