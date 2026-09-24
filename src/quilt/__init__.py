@@ -15,7 +15,7 @@ disparate tools across the SuperInstance fleet:
 """
 from __future__ import annotations
 
-__version__ = "0.3.2"
+__version__ = "0.3.3"
 
 
 # === Fleet paths =============================================================
@@ -38,6 +38,7 @@ QUILT_VOICE_AGENT = QUILT_REPOS / "quilt-voice-agent"
 QUILT_FULL_STACK_DEMO = QUILT_REPOS / "quilt-full-stack-demo"
 QUILT_MESH_BRIDGE = QUILT_REPOS / "quilt-mesh-bridge"
 QUILT_SPREADSHEET = QUILT_REPOS / "quilt-spreadsheet-inference"
+QUILT_FLUIDICS = QUILT_REPOS / "quilt-fluidics"
 
 
 def fleet_repos() -> list[Path]:
@@ -55,6 +56,7 @@ def fleet_repos() -> list[Path]:
         QUILT_FULL_STACK_DEMO,
         QUILT_MESH_BRIDGE,
         QUILT_SPREADSHEET,
+        QUILT_FLUIDICS,
     ]
     return [p for p in candidates if p.exists()]
 
