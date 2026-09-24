@@ -36,6 +36,7 @@ QUILT_CLI = QUILT_REPOS / "quilt-cli"
 QUILT_FLEET_SIM = QUILT_REPOS / "quilt-fleet-sim"
 QUILT_VOICE_AGENT = QUILT_REPOS / "quilt-voice-agent"
 QUILT_FULL_STACK_DEMO = QUILT_REPOS / "quilt-full-stack-demo"
+QUILT_MESH_BRIDGE = QUILT_REPOS / "quilt-mesh-bridge"
 
 
 def fleet_repos() -> list[Path]:
@@ -51,6 +52,7 @@ def fleet_repos() -> list[Path]:
         QUILT_FLEET_SIM,
         QUILT_VOICE_AGENT,
         QUILT_FULL_STACK_DEMO,
+        QUILT_MESH_BRIDGE,
     ]
     return [p for p in candidates if p.exists()]
 
@@ -58,3 +60,4 @@ def fleet_repos() -> list[Path]:
 def version_string() -> str:
     """Return a one-line version banner."""
     return f"quilt-cli/{__version__} (Python)"
+QUILT_MESH_BRIDGE = QUILT_REPOS / "quilt-mesh-bridge"
