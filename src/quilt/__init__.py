@@ -32,6 +32,10 @@ QUILT_EDGE_ML = QUILT_REPOS / "quilt-edge-ml"
 QUILT_FLEET_ORCHESTRATOR = QUILT_REPOS / "quilt-fleet-orchestrator"
 QUILT_EDGE_OBSERVER = QUILT_REPOS / "quilt-edge-observer"
 QUILT_JEV_TOOLKIT = QUILT_REPOS / "quilt-jev-toolkit"
+QUILT_CLI = QUILT_REPOS / "quilt-cli"
+QUILT_FLEET_SIM = QUILT_REPOS / "quilt-fleet-sim"
+QUILT_VOICE_AGENT = QUILT_REPOS / "quilt-voice-agent"
+QUILT_FULL_STACK_DEMO = QUILT_REPOS / "quilt-full-stack-demo"
 
 
 def fleet_repos() -> list[Path]:
@@ -43,6 +47,10 @@ def fleet_repos() -> list[Path]:
         QUILT_FLEET_ORCHESTRATOR,
         QUILT_EDGE_OBSERVER,
         QUILT_JEV_TOOLKIT,
+        QUILT_CLI,
+        QUILT_FLEET_SIM,
+        QUILT_VOICE_AGENT,
+        QUILT_FULL_STACK_DEMO,
     ]
     return [p for p in candidates if p.exists()]
 
