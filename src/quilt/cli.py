@@ -31,7 +31,7 @@ def _load_commands():
     from quilt.commands import (
         canon, cell, doctor, edge, fleet, init_cmd, mesh, qult,
         quilt_cmd, sim, version, voice, scout, chord, legalese,
-        holodeck,
+        holodeck, bootstrap, brew, trace,
     )
     return {
         "cell":      cell,
@@ -48,6 +48,9 @@ def _load_commands():
         "version":   version,
         "scout":     scout,
         "chord":     chord,
+        "bootstrap": bootstrap,
+        "brew":      brew,
+        "trace":     trace,
         "legalese":  legalese,
         "holodeck":  holodeck,
     }
