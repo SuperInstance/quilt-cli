@@ -30,7 +30,7 @@ def _load_commands():
     """Lazy import of command modules to keep CLI fast at startup."""
     from quilt.commands import (
         canon, cell, doctor, edge, fleet, init_cmd, mesh, qult,
-        quilt_cmd, sim, version, voice,
+        quilt_cmd, sim, version, voice, scout, chord, legalese,
     )
     return {
         "cell":      cell,
@@ -45,6 +45,9 @@ def _load_commands():
         "init":      init_cmd,
         "doctor":    doctor,
         "version":   version,
+        "scout":     scout,
+        "chord":     chord,
+        "legalese":  legalese,
     }
 
 
