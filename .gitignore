@@ -15,3 +15,12 @@ dist/
 htmlcov/
 .tox/
 .cache
+
+# added by commit-and-push-all
+.eggs/
+target/
+node_modules/
+.cache/
+.wrangler/
+.DS_Store
+*.log
