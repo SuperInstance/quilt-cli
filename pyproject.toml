@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quilt"
+version = "0.1.0"
+description = "Unified CLI for the SuperInstance Quilt cellular framework"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "SuperInstance", email = "casey@superinstance.dev" }]
+keywords = ["quilt", "cellular", "p2p", "edge", "ml", "mesh"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    # Optional, lazy-loaded. CLI itself has no hard deps.
+]
+
+[project.optional-dependencies]
+edge = ["websockets>=11"]
+fleet = ["zeroconf>=0.130"]
+llm = ["httpx>=0.25"]
+canon = ["httpx>=0.25"]
+
+[project.scripts]
+quilt = "quilt.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/SuperInstance/quilt-cli"
+Documentation = "https://github.com/SuperInstance/quilt-cli"
+Repository = "https://github.com/SuperInstance/quilt-cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+quilt = ["templates/*.md", "templates/*.toml", "templates/*.py"]

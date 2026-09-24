@@ -1,0 +1,12 @@
+
+[canon]
+httpx>=0.25
+
+[edge]
+websockets>=11
+
+[fleet]
+zeroconf>=0.130
+
+[llm]
+httpx>=0.25
